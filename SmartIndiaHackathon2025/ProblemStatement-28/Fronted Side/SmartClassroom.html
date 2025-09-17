@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Classroom</title>
+    <link rel="stylesheet" href="SmartClassroom.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h1>Smart Classroom & Timetable Scheduler</h1>
+                </div>
+                <div class="nav">
+                    <div class="nav-item">Dashboard</div>
+                    <div class="nav-item">Timetable</div>
+                    <div class="nav-item">Classrooms</div>
+                    <div class="nav-item">Settings</div>
+                    
+                    <div class="auth-buttons" id="authButtons">
+                        <button class="auth-btn login-btn" id="showLogin">Login</button>
+                        <button class="auth-btn register-btn" id="showRegister">Register</button>
+                    </div>
+                    
+                    <div class="user-menu" id="userMenu">
+                        <div class="user-avatar" id="userAvatar">U</div>
+                        <div class="user-name" id="userName">User</div>
+                        <button class="auth-btn login-btn" id="logoutBtn">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="auth-container" id="authContainer">
+            <div class="auth-tabs">
+                <div class="auth-tab active" data-tab="login">Login</div>
+                <div class="auth-tab" data-tab="register">Register</div>
+            </div>
+            
+            <div class="auth-form active" id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" id="loginEmail" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-input" id="loginPassword" placeholder="Enter your password">
+                </div>
+                <button class="btn btn-primary" id="loginBtn" style="width: 100%;">Login</button>
+                <div class="form-footer">
+                    <p>Don't have an account? <span class="form-link" id="switchToRegister">Register</span></p>
+                </div>
+            </div>
+            
+            <div class="auth-form" id="registerForm">
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-input" id="registerName" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" id="registerEmail" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-input" id="registerPassword" placeholder="Create a password">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password" class="form-input" id="registerConfirmPassword" placeholder="Confirm your password">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Student ID</label>
+                    <input type="text" class="form-input" id="registerStudentId" placeholder="Enter your student ID">
+                </div>
+                <button class="btn btn-primary" id="registerBtn" style="width: 100%;">Create Account</button>
+                <div class="form-footer">
+                    <p>Already have an account? <span class="form-link" id="switchToLogin">Login</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Add New Class</h2>
+                </div>
+                <div class="card-content">
+                    <div class="form-group">
+                        <label class="form-label">Class Name</label>
+                        <input type="text" class="form-input" placeholder="Enter class name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Select Day</label>
+                        <select class="form-input">
+                            <option>Monday</option>
+                            <option>Tuesday</option>
+                            <option>Wednesday</option>
+                            <option>Thursday</option>
+                            <option>Friday</option>
+                            <option>Saturday</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Time Slot</label>
+                        <select class="form-input">
+                            <option>8:00 - 9:30 AM</option>
+                            <option>9:45 - 11:15 AM</option>
+                            <option>11:30 - 1:00 PM</option>
+                            <option>2:00 - 3:30 PM</option>
+                            <option>3:45 - 5:15 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Classroom</label>
+                        <select class="form-input">
+                            <option>Room 101 (Capacity: 40)</option>
+                            <option>Room 102 (Capacity: 35)</option>
+                            <option>Lab 201 (Computers: 30)</option>
+                            <option>Lab 202 (Science: 25)</option>
+                            <option>Auditorium (Capacity: 100)</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary">Schedule Class</button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Smart Features</h2>
+                </div>
+                <div class="card-content">
+                    <div class="class-item">
+                        <div class="class-name">Auto-Schedule</div>
+                        <p>Intelligent algorithm to avoid conflicts and optimize resources</p>
+                    </div>
+                    <div class="class-item">
+                        <div class="class-name">Room Utilization</div>
+                        <p>Monitor classroom usage and optimize space allocation</p>
+                    </div>
+                    <div class="class-item">
+                        <div class="class-name">Conflict Detection</div>
+                        <p>Real-time detection of scheduling conflicts</p>
+                    </div>
+                    <div class="class-item">
+                        <div class="class-name">Notifications</div>
+                        <p>Automatic alerts for schedule changes</p>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 20px;">Optimize Timetable</button>
+                </div>
+            </div>
+            
+            <div class="card timetable">
+                <div class="card-header">
+                    <h2 class="card-title">Weekly Timetable</h2>
+                    <button class="btn btn-primary">Export Timetable</button>
+                </div>
+                <div class="card-content">
+                    <div class="days">
+                        <div class="day">
+                            <div class="day-title">Monday</div>
+                            <div class="class-item">
+                                <div class="class-time">8:00 - 9:30 AM</div>
+                                <div class="class-name">Mathematics</div>
+                                <div class="class-room">Room 101</div>
+                            </div>
+                            <div class="class-item">
+                                <div class="class-time">11:30 - 1:00 PM</div>
+                                <div class="class-name">Computer Science</div>
+                                <div class="class-room">Lab 201</div>
+                            </div>
+                        </div>
+                        
+                        <div class="day">
+                            <div class="day-title">Tuesday</div>
+                            <div class="class-item">
+                                <div class="class-time">9:45 - 11:15 AM</div>
+                                <div class="class-name">Physics</div>
+                                <div class="class-room">Room 102</div>
+                            </div>
+                            <div class="class-item">
+                                <div class="class-time">2:00 - 3:30 PM</div>
+                                <div class="class-name">Chemistry</div>
+                                <div class="class-room">Lab 202</div>
+                            </div>
+                        </div>
+                        
+                        <div class="day">
+                            <div class="day-title">Wednesday</div>
+                            <div class="class-item">
+                                <div class="class-time">8:00 - 9:30 AM</div>
+                                <div class="class-name">Mathematics</div>
+                                <div class="class-room">Room 101</div>
+                            </div>
+                            <div class="class-item">
+                                <div class="class-time">3:45 - 5:15 PM</div>
+                                <div class="class-name">Robotics Club</div>
+                                <div class="class-room">Lab 201</div>
+                            </div>
+                        </div>
+                        
+                        <div class="day">
+                            <div class="day-title">Thursday</div>
+                            <div class="class-item">
+                                <div class="class-time">11:30 - 1:00 PM</div>
+                                <div class="class-name">Computer Science</div>
+                                <div class="class-room">Lab 201</div>
+                            </div>
+                            <div class="class-item">
+                                <div class="class-time">2:00 - 3:30 PM</div>
+                                <div class="class-name">English</div>
+                                <div class="class-room">Room 101</div>
+                            </div>
+                        </div>
+                        
+                        <div class="day">
+                            <div class="day-title">Friday</div>
+                            <div class="class-item">
+                                <div class="class-time">9:45 - 11:15 AM</div>
+                                <div class="class-name">Physics</div>
+                                <div class="class-room">Room 102</div>
+                            </div>
+                            <div class="class-item">
+                                <div class="class-time">2:00 - 3:30 PM</div>
+                                <div class="class-name">Art Workshop</div>
+                                <div class="class-room">Auditorium</div>
+                            </div>
+                        </div>
+                        
+                        <div class="day">
+                            <div class="day-title">Saturday</div>
+                            <div class="class-item">
+                                <div class="class-time">8:00 - 9:30 AM</div>
+                                <div class="class-name">Mathematics Tutorial</div>
+                                <div class="class-room">Room 101</div>
+                            </div>
+                            <div class="class-item">
+                                <div class="class-time">11:30 - 1:00 PM</div>
+                                <div class="class-name">Science Fair Prep</div>
+                                <div class="class-room">Lab 202</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat">
+                <i class="fas fa-chalkboard"></i>
+                <div class="stat-number">12</div>
+                <div class="stat-title">Classrooms</div>
+            </div>
+            <div class="stat">
+                <i class="fas fa-book-open"></i>
+                <div class="stat-number">28</div>
+                <div class="stat-title">Weekly Classes</div>
+            </div>
+            <div class="stat">
+                <i class="fas fa-clock"></i>
+                <div class="stat-number">92%</div>
+                <div class="stat-title">Utilization Rate</div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Smart Classroom & Timetable Scheduler | Developed for SIH Hackathon | © 2023</p>
+        </footer>
+    </div>
+    <script src="SmartClassroom.js"></script>
+</body>
+</html>
